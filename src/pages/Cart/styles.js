@@ -53,7 +53,7 @@ export const ProductTable = styled.table`
   }
 
   span {
-    display: block; /* to get the margin-top */
+    display: block; 
     margin-top: 5px;
     font-size: 18px;
     font-weight: bold;

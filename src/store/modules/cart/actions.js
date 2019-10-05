@@ -1,4 +1,3 @@
-// Will be listened only by 'SAGA', will get the info from api and then the 'SAGA' will call "addToCartSuccess".
 export function addToCartRequest(id) {
   return {
     type: '@cart/ADD_REQUEST',
@@ -6,7 +5,6 @@ export function addToCartRequest(id) {
   };
 }
 
-// Will be listened only by Reducer to add the info in the cart.
 export function addToCartSuccess(product) {
   return {
     type: '@cart/ADD_SUCCESS',
@@ -21,7 +19,6 @@ export function removeFromCart(id) {
   };
 }
 
-// Request to adds more products into the cart.
 export function updateAmountRequest(id, amount) {
   return {
     type: '@cart/UPDATE_AMOUNT_REQUEST',
@@ -30,7 +27,6 @@ export function updateAmountRequest(id, amount) {
   }
 }
 
-// Adds more products into the cart.
 export function updateAmountSuccess(id, amount) {
   return {
     type: '@cart/UPDATE_AMOUNT_SUCCESS',

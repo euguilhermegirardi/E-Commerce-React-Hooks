@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const Container = styled.header`
   display: flex;
-  justify-content: space-between; /* Logo in the left side, cart in the right side. */
+  justify-content: space-between;
   align-items: center;
   margin: 50px 0;
 `;
@@ -11,7 +11,7 @@ export const Container = styled.header`
 export const Cart = styled(Link)`
   display: flex;
   align-items: center;
-  text-decoration: none; /* no underlinde. */
+  text-decoration: none;
   transition: opacity 0.2s;
 
   &:hover {
@@ -24,7 +24,7 @@ export const Cart = styled(Link)`
   }
 
   strong {
-    display: block; /*To put it above the "span" */
+    display: block; 
     color: #fff;
   }
 

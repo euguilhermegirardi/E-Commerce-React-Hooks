@@ -2,7 +2,7 @@ import React from 'react';
 import { Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
-import './config/ReactotronConfig'; // Must be imported before 'store'.
+import './config/ReactotronConfig';
 import GlobalStyle from './styles/global';
 import Header from './components/Header';
 import Routes from './routes';
@@ -11,9 +11,7 @@ import history from './services/history';
 
 function App() {
   return (
-    // Provider will allow access to the store (Redux) for all aplication.
     <Provider store={store}>
-      {/* Router give to the other components the access to all pages in the application. */}
       <Router history={history}>
         <GlobalStyle />
         <Header />

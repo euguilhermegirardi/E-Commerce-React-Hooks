@@ -5,7 +5,7 @@ import reactotronSaga from 'reactotron-redux-saga';
 if (process.env.NODE_ENV === 'development') {
   const tron = Reactotron.configure()
     .use(reactotronRedux())
-    .use(reactotronSaga()) // It gives more informations in Reactotron. Must config in store/index.js.
+    .use(reactotronSaga())
     .connect();
 
   tron.clear();

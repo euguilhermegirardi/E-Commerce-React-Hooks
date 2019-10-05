@@ -12,12 +12,10 @@ import * as CartActions from '../../store/modules/cart/actions';
 
 function Cart({ cart, removeFromCart, updateAmountRequest, total }) {
 
-  // Adds more items from the selected product.
   function increment(product) {
     updateAmountRequest(product.id, product.amount + 1);
   }
 
-  // Remove items from the selected product.
   function decrement(product) {
     updateAmountRequest(product.id, product.amount - 1);
   }
@@ -46,7 +44,6 @@ function Cart({ cart, removeFromCart, updateAmountRequest, total }) {
                 <span>{product.priceFormatted}</span>
               </td>
               <td>
-                {/* "Div" was added because "td" cannot have "display: flex". */}
                 <div>
                   <button type="button" onClick={() => decrement(product)} >
                     <MdRemoveCircleOutline size={20} color="#7159c1" />
@@ -83,23 +80,18 @@ function Cart({ cart, removeFromCart, updateAmountRequest, total }) {
   );
 }
 
-// Convert 'state' into props.
 const mapStateToProps = state => ({
-  // property "cart" will receive all the info from reducer "cart".
-  // Perfect place to do the Subtotal and Total calculation.
   cart: state.cart.map(product => ({
     ...product,
     subtotal: formatPrice(product.price * product.amount)
   })),
   total: formatPrice(
-    // 'reduce' is used when you want to get an array and recude into just one value.
     state.cart.reduce((total, product) => {
       return total + product.price * product.amount;
-    }, 0), // Initialize as 'zero'.
+    }, 0),
   ),
 });
 
-// Convert 'actions' into props.
 const mapDispatchToProps = dispatch =>
   bindActionCreators(CartActions, dispatch);
 

@@ -12,7 +12,6 @@ function Header({ cartSize }) {
         <img src={logo2} alt="rocketshoes" />
       </Link>
 
-      {/* Cart has the connection (link) because it was imported in styles.js */}
       <Cart to="/cart">
         <div>
           <strong>My cart</strong>

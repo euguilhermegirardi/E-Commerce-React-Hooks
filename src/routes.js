@@ -5,7 +5,6 @@ import Cart from './pages/Cart';
 
 export default function Routes() {
   return (
-    // Switch requires calling one route at a time.
     <Switch>
       <Route path="/" exact component={Home} />
       <Route path="/cart" component={Cart} />

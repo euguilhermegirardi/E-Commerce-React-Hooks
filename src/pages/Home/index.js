@@ -15,8 +15,6 @@ class Home extends Component {
   async componentDidMount() {
     const response = await api.get('products');
 
-    // Config the format price when we get the info from the API.
-    // Do it before the info goes to the render.
     const data = response.data.map(product => ({
       ...product,
       priceFormatted: formatPrice(product.price),
@@ -56,20 +54,14 @@ class Home extends Component {
   }
 }
 
-// Convert 'state' into props.
-// To show the quantity of products the user has. It will show in the small cart in 'home'.
 const mapStateToProps = state => ({
-  // amount = id of the product and the quantity.
   amount: state.cart.reduce((amount, product) => {
     (amount[product.id] = product.amount);
     return amount;
-  }, {}) // To initialize the amount as 'zero'.
+  }, {})
 });
 
-// Convert 'actions' into props.
 const mapDispatchToProps = dispatch =>
   bindActionCreators(CartActions, dispatch);
-// If you don't have 'StateToProps' or 'DispatchToProps', you have to pass 'null'.
-// export default connect(null, mapDispatchToProps)(Home);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

@@ -19,7 +19,6 @@ export const ProductList = styled.ul`
     max-width: 250px;
   }
 
-  /* > strong = Will edit the "strong" only inside of this "li" */
   > strong {
     font-size: 16px;
     line-height: 20px;
@@ -39,7 +38,7 @@ export const ProductList = styled.ul`
     border: 0;
     border-radius: 4px;
     overflow: hidden;
-    margin-top: auto; /* to increase all boxes when just one has a big text */
+    margin-top: auto;
     display: flex;
     align-items: center;
     transition: background 0.2s

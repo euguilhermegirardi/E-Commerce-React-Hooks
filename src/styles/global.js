@@ -3,7 +3,6 @@ import background from '../assets/images/background.svg';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default createGlobalStyle`
-  {/*Font by Google Fonts */}
   @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
   * {
@@ -22,7 +21,6 @@ export default createGlobalStyle`
     font: 14px sans-serif;
   }
 
-  {/* It involves the entire application */}
   #root {
     max-width: 1020px;
     margin: 0 auto;
