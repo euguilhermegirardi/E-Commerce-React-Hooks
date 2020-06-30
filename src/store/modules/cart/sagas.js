@@ -10,7 +10,7 @@ function* addToCart({ id }) {
   const productExists = yield select(
     state => state.cart.find(p => p.id === id),
   );
-
+  console.log(productExists);
   const stock = yield call(api.get, `/stock/${id}`);
 
   const stockAmount = stock.data.amount;

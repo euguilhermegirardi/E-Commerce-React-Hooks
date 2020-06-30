@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { MdShoppingCart } from 'react-icons/md';
+
 import { ProductList } from './styles';
 import { formatPrice } from '../../util/format';
 import api from '../../services/api';
@@ -32,7 +33,7 @@ export default function Home() {
     loadProducts();
   }, []);
 
-  function handleAddProcuts(id) {
+  function handleAddProducts(id) {
     dispatch(CartActions.addToCartRequest(id));
   };
 
@@ -43,7 +44,7 @@ export default function Home() {
           <img src={product.image} alt={product.title} />
           <strong>{product.title}</strong>
           <span>{product.priceFormatted}</span>
-          <button type="button" onClick={() => handleAddProcuts(product.id)}>
+          <button type="button" onClick={() => handleAddProducts(product.id)}>
             <div>
               <MdShoppingCart size={16} color="#FFF" />
               {amount[product.id] || 0}
